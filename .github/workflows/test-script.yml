@@ -8,5 +8,8 @@ jobs:
                 os: [ubuntu-latest, macos-latest]
         runs-on: ${{ matrix.os }}
         steps:
+        - name: Checkout Repo
+          uses: actions/checkout@v4
+        
         - name: Run script
           run: ./dev-setup.sh
