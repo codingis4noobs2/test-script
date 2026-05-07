@@ -1,0 +1,12 @@
+name: Test script
+on:
+    workflow_dispatch:
+jobs:
+    test:
+        strategy:
+            matrix:
+                os: [ubuntu-latest, macos-latest]
+        runs-on: ${{ matrix.os }}
+        steps:
+        - name: Run script
+          run: ./dev-setup.sh
